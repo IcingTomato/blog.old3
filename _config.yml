@@ -1,4 +1,4 @@
-permalink: /:year:month:day/:title
+permalink: /:year/:title/
 url: //panzhifei.fun
 baseurl: 
 
