@@ -63,6 +63,7 @@ title: me
             <li><a href="http://www.it1995.cn/">IT1995</a></li>
             <li><a href="https://zephray.me/">module ZephRay;</a></li>
             <li><a href="http://www.guzhimian.fun/">谷治眠's code World</a></li>
+            <li><a href="http://7400.me/">EE Archeology 电子考古学</a></li>
         </ul>
         
 </div>
