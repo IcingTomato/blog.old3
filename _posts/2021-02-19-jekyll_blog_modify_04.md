@@ -7,11 +7,11 @@ tags: software
 # Windows的cmd命令查询指定端口占用的进程并关闭
 
 ```
-1. 查找对应的端口占用的进程： **netstat  -aon | findstr "1080"**，找到占用1080端口对应的程序的PID号;
+netstat  -aon | findstr "1080"  #查找对应的端口占用的进程，找到占用1080端口对应的程序的PID号;
 
-2. 根据PID号找到对应的程序： **tasklist | findstr "PID号"**，找到对应的程序名;
+tasklist | findstr "PID号"      #根据PID号找到对应的程序，找到对应的程序名;
 
-3. 结束该进程： **taskkill /f /t /im "PID号"**.
+taskkill /f /t /im "PID号"      #结束该进程.
 ```
 
 # GitHub本地仓库配置
