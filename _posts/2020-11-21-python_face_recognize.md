@@ -79,7 +79,7 @@ $ sudo pip3 install face_recognition
 
 > [Labeled Faces in the Wild](//vis-www.cs.umass.edu/lfw/)是美国麻省大学安姆斯特分校（University of Massachusetts Amherst)制作的人脸数据集，该数据集包含了从网络收集的13,000多张面部图像。
 
-本项目提供了简易的`face_recognition`命令行工具，你可以用它处理整个文件夹里的图片。
+本项目提供了简易的 **face_recognition** 命令行工具，你可以用它处理整个文件夹里的图片。
 
 [![PyPI](https://img.shields.io/pypi/v/face_recognition.svg)](https://pypi.python.org/pypi/face_recognition)
 [![Build Status](https://travis-ci.org/ageitgey/face_recognition.svg?branch=master)](https://travis-ci.org/ageitgey/face_recognition)
@@ -154,7 +154,7 @@ First, make sure you have dlib already installed with Python bindings:
 
 - [如何在macOS或者Ubuntu上安装dlib](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
 
-Then, install this module from pypi using `pip3` (or `pip2` for Python 2):
+Then, install this module from pypi using **pip3** (or **pip2** for Python 2):
 
 ```bash
 pip3 install face_recognition
@@ -165,7 +165,7 @@ pip3 install face_recognition
 
 #### 在 Mac 或者 Linux上安装本项目 2  
 
-修改你的pip镜像源为清华镜像，然后使用`pip install face_recognition`,可以自动帮你安装各种依赖，包括dlib。只是在安装dlib的时候可能会出问题，因为dlib需要编译，出现的问题一般是`gcc`或者`g++`版本的问题，所以在`pip install face_recognition`之前，可以通过在命令行键入  
+修改你的pip镜像源为清华镜像，然后使用 **pip install face_recognition** ,可以自动帮你安装各种依赖，包括dlib。只是在安装dlib的时候可能会出问题，因为dlib需要编译，出现的问题一般是 **gcc** 或者 **g++** 版本的问题，所以在 **pip install face_recognition** 之前，可以通过在命令行键入  
 
     export CC=/usr/local/bin/gcc
     export CXX=/usr/local/bin/g++  
@@ -192,12 +192,12 @@ pip3 install face_recognition
 
 当你安装好了本项目，你可以使用两种命令行工具：
 
-- `face_recognition` - 在单张图片或一个图片文件夹中认出是谁的脸。
-- `face_detection` - 在单张图片或一个图片文件夹中定位人脸位置。
+- **face_recognition** - 在单张图片或一个图片文件夹中认出是谁的脸。
+- **face_detection** - 在单张图片或一个图片文件夹中定位人脸位置。
 
-#### `face_recognition` 命令行工具
+#### **face_recognition** 命令行工具
 
-`face_recognition`命令行工具可以在单张图片或一个图片文件夹中认出是谁的脸。
+**face_recognition** 命令行工具可以在单张图片或一个图片文件夹中认出是谁的脸。
 
 首先，你得有一个你已经知道名字的人脸图片文件夹，一个人一张图，图片的文件名即为对应的人的名字：
 
@@ -207,7 +207,7 @@ pip3 install face_recognition
 
 ![unknown](//panzhifei.fun/img/2020/11/21/01/08.png)
 
-然后，你在命令行中切换到这两个文件夹所在路径，然后使用`face_recognition`命令行，传入这两个图片文件夹，然后就会输出未知图片中人的名字：
+然后，你在命令行中切换到这两个文件夹所在路径，然后使用 **face_recognition** 命令行，传入这两个图片文件夹，然后就会输出未知图片中人的名字：
 
 ```bash
 $ face_recognition ./pictures_of_people_i_know/ ./unknown_pictures/
@@ -218,13 +218,13 @@ $ face_recognition ./pictures_of_people_i_know/ ./unknown_pictures/
 
 输出结果的每一行对应着图片中的一张脸，图片名字和对应人脸识别结果用逗号分开。
 
-如果结果输出了`unknown_person`，那么代表这张脸没有对应上已知人脸图片文件夹中的任何一个人。
+如果结果输出了 **unknown_person**，那么代表这张脸没有对应上已知人脸图片文件夹中的任何一个人。
 
-#### `face_detection` 命令行工具
+#### **face_detection** 命令行工具
 
-`face_detection`命令行工具可以在单张图片或一个图片文件夹中定位人脸位置（输出像素点坐标）。
+**face_detection**命令行工具可以在单张图片或一个图片文件夹中定位人脸位置（输出像素点坐标）。
 
-在命令行中使用`face_detection`，传入一个图片文件夹或单张图片文件来进行人脸位置检测：
+在命令行中使用**face_detection**，传入一个图片文件夹或单张图片文件来进行人脸位置检测：
 
 ```bash
 $ face_detection  ./folder_with_pictures/
@@ -240,7 +240,7 @@ examples/image2.jpg,95,941,244,792
 
 如果一张脸识别出不止一个结果，那么这意味着他和其他人长的太像了（本项目对于小孩和亚洲人的人脸识别准确率有待提升）。你可以把容错率调低一些，使识别结果更加严格。
 
-通过传入参数 `--tolerance` 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。
+通过传入参数 **--tolerance** 来实现这个功能，默认的容错率是0.6，容错率越低，识别越严格准确。
 
 ```bash
 $ face_recognition --tolerance 0.54 ./pictures_of_people_i_know/ ./unknown_pictures/
@@ -249,7 +249,7 @@ $ face_recognition --tolerance 0.54 ./pictures_of_people_i_know/ ./unknown_pictu
 /face_recognition_test/unknown_pictures/unknown.jpg,unknown_person
 ```
 
-如果你想看人脸匹配的具体数值，可以传入参数 `--show-distance true`：
+如果你想看人脸匹配的具体数值，可以传入参数 **--show-distance true**：
 
 ```bash
 $ face_recognition --show-distance true ./pictures_of_people_i_know/ ./unknown_pictures/
@@ -273,19 +273,19 @@ unknown_person
 
 如果你的CPU是多核的，你可以通过并行运算加速人脸识别。例如，如果你的CPU有四个核心，那么你可以通过并行运算提升大概四倍的运算速度。
 
-如果你使用Python3.4或更新的版本，可以传入 `--cpus <number_of_cpu_cores_to_use>` 参数：
+如果你使用Python3.4或更新的版本，可以传入 **--cpus <number_of_cpu_cores_to_use>** 参数：
 
 ```bash
 $ face_recognition --cpus 4 ./pictures_of_people_i_know/ ./unknown_pictures/
 ```
 
-你可以传入 `--cpus -1`参数来调用cpu的所有核心。
+你可以传入 **--cpus -1**参数来调用cpu的所有核心。
 
 > 子豪兄批注：树莓派3B有4个CPU核心，传入多核参数可以显著提升图片识别的速度（亲测）。
 
-#### Python 模块:`face_recognition`
+#### Python 模块:**face_recognition**
 
-在Python中，你可以导入`face_recognition`模块，调用我们提供的丰富的API接口，用几行代码就可以轻松玩转各种人脸识别功能！
+在Python中，你可以导入 **face_recognition**模块，调用我们提供的丰富的API接口，用几行代码就可以轻松玩转各种人脸识别功能！
 
 API 接口文档: [https://face-recognition.readthedocs.io](https://face-recognition.readthedocs.io/en/latest/face_recognition.html)
 
@@ -306,7 +306,7 @@ face_locations = face_recognition.face_locations(image)
 
 你也可以使用深度学习模型达到更加精准的人脸定位。
 
-注意：这种方法需要GPU加速（通过英伟达显卡的CUDA库驱动），你在编译安装`dlib`的时候也需要开启CUDA支持。
+注意：这种方法需要GPU加速（通过英伟达显卡的CUDA库驱动），你在编译安装 **dlib**的时候也需要开启CUDA支持。
 
 ```python
 import face_recognition
@@ -413,9 +413,9 @@ else:
 
 ## 把本项目部署在云服务器上 (Heroku, AWS等)
 
-本项目是基于C++库`dlib`的，所以把本项目部署在Heroku或者AWS的云端服务器上是很明智的。
+本项目是基于C++库**dlib**的，所以把本项目部署在Heroku或者AWS的云端服务器上是很明智的。
 
-为了简化这个过程，有一个Dockerfile案例，教你怎么把`face_recognition`开发的app封装成[Docker](https://www.docker.com/) 容器文件，你可以把它部署在所以支持Docker镜像文件的云服务上。
+为了简化这个过程，有一个Dockerfile案例，教你怎么把 **face_recognition** 开发的app封装成[Docker](https://www.docker.com/) 容器文件，你可以把它部署在所以支持Docker镜像文件的云服务上。
 
 ## 出了幺蛾子？
 
@@ -423,6 +423,6 @@ else:
 
 ## 鸣谢
 
-- 非常感谢 [Davis King](https://github.com/davisking) ([@nulhom](https://twitter.com/nulhom))创建了`dlib`库，提供了响应的人脸关键点检测和人脸编码相关的模型，你可以查看 [blog post](//blog.dlib.net/2017/02/high-quality-face-recognition-with-deep.html)这个网页获取更多有关ResNet的信息。
+- 非常感谢 [Davis King](https://github.com/davisking) ([@nulhom](https://twitter.com/nulhom))创建了'dlib'库，提供了响应的人脸关键点检测和人脸编码相关的模型，你可以查看 [blog post](//blog.dlib.net/2017/02/high-quality-face-recognition-with-deep.html)这个网页获取更多有关ResNet的信息。
 - 感谢每一个相关Python模块（包括numpy,scipy,scikit-image,pillow等）的贡献者。
 - 感谢 [Cookiecutter](https://github.com/audreyr/cookiecutter) 和[audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage) 项目模板，使得Python的打包方式更容易接受。

@@ -22,7 +22,7 @@ $ git push gitee master    # Push to 'gitee'
 $ git push origin master   # Push to 'github'
 ```
 
-You can also change ```'your-repository'/.git/config```
+You can also change **'your-repository'/.git/config**
 
 ```
 [core]

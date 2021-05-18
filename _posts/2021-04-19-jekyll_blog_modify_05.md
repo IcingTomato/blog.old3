@@ -17,7 +17,7 @@ $ git pull origin master
 $ bundle exec jekyll build -d /var/www/html/
 ```
 
-First, you need to install some Dependence like `webrick` `rake` `jekyll`.
+First, you need to install some Dependence like **webrick** **rake** **jekyll**.
 
 And then, in my case, I had a PATH problem.
 
@@ -31,9 +31,9 @@ Bundler::GemNotFound: Could not find rake-10.3.2 in any of the sources
 Show 28 more lines
 ```
 
-I used `gem install rake` but it was no use fixing the matter.
+I used **gem install rake** but it was no use fixing the matter.
 
-SO, `bundle install --path vendor/cache` can help you fix the problem.
+SO, **bundle install --path vendor/cache** can help you fix the problem.
 
 This command line generally fixes it as that is the more common problem. Basically, my bundler path configuration is messed up. See their [documentation](https://bundler.io/v1.11/man/bundle-config.1.html) (first paragraph) for where to find those configurations and change them manually if needed.
 

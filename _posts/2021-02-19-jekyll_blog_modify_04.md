@@ -10,11 +10,11 @@ tags: software
 
 # Windows的cmd命令查询指定端口占用的进程并关闭
 
-1. 查找对应的端口占用的进程：`netstat  -aon|findstr "1080"`，找到占用1080端口对应的程序的PID号;
+1. 查找对应的端口占用的进程： **netstat  -aon|findstr "1080"**，找到占用1080端口对应的程序的PID号;
 
-2. 根据PID号找到对应的程序：`tasklist|findstr "PID号"`，找到对应的程序名;
+2. 根据PID号找到对应的程序： **tasklist|findstr "PID号"**，找到对应的程序名;
 
-3. 结束该进程：`taskkill /f /t /im "PID号"`.
+3. 结束该进程： **taskkill /f /t /im "PID号"**.
 
 # GitHub本地仓库配置
 
@@ -36,7 +36,9 @@ $ git push -f -u origin master
 
 至于我为什么要写这个，因为上传这张博客的时候不知道为啥始终报错。
 
-> There was a YAML syntax error on line 10 column 7 in `<unknown>`: `found a tab character that violate indentation while scanning a plain scalar`.
+```
+There was a YAML syntax error on line 10 column 7 in <unknown>: found a tab character that violate indentation while scanning a plain scalar.
+```
 
 第十行第七字段是个tag啊！！！！
 
@@ -177,17 +179,17 @@ $ gem source -u
 $ gem install bundler jekyll github-pages jekyll-paginate webrick
 ```
 
-安装完之后就可以将博客从`GitHub`或`Gitee`上`git clone`下来了。
+安装完之后就可以将博客从 **GitHub**或**Gitee**上**git clone**下来了。
 
-接着完成对`nginx`的配置
+接着完成对**nginx**的配置
 
-安装`nginx`
+安装**nginx**
 
 ```shell
 $ sudo apt-get install nginx
 ```
 
-然后定位到`nginx`的配置文件：
+然后定位到**nginx**的配置文件：
 
 ```shell
 $ sudo vim /etc/nginx/sites-enabled/default
@@ -225,7 +227,7 @@ server {
 }
 ```
 
-保存好之后重启`nginx`
+保存好之后重启**nginx**
 
 ```shell
 $ sudo systemctl restart nginx

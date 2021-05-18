@@ -197,7 +197,7 @@ tags: hardware software
 #define GPIO_AXP(n)	(AXP_PIN_BASE  + (n))
 ```
 
-从上面可以看出 ` SUNXI_P~ ` 代表后面的数字，仅需加上 `n` 就可以得到Linux GPIO的真实数字
+从上面可以看出 **SUNXI_P~** 代表后面的数字，仅需加上 **n** 就可以得到Linux GPIO的真实数字
 
 ## 终端输入 cat /sys/kernel/debug/gpio
 
