@@ -4,17 +4,15 @@ title: "Plan of Jekyll Blog Transfer - Episode 4: All Done"
 tags: software 
 ---
 
-# 博客空白仓库分支
-
-[点击此处访问](https://github.com/ch1y4/ch1y4.github.io/tree/blank)
-
 # Windows的cmd命令查询指定端口占用的进程并关闭
 
-1. 查找对应的端口占用的进程： **netstat  -aon|findstr "1080"**，找到占用1080端口对应的程序的PID号;
+```
+1. 查找对应的端口占用的进程： **netstat  -aon | findstr "1080"**，找到占用1080端口对应的程序的PID号;
 
-2. 根据PID号找到对应的程序： **tasklist|findstr "PID号"**，找到对应的程序名;
+2. 根据PID号找到对应的程序： **tasklist | findstr "PID号"**，找到对应的程序名;
 
 3. 结束该进程： **taskkill /f /t /im "PID号"**.
+```
 
 # GitHub本地仓库配置
 
