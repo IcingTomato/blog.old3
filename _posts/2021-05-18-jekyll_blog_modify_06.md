@@ -82,3 +82,5 @@ Maybe this blog will auto publish by crontab? I don't know.
 ```
 */5 * * * * reboot  # It means every five minutes reboots the machine.
 ```
+
+OKay, **git pull** is working, but **jekyll build** doesn't work.
