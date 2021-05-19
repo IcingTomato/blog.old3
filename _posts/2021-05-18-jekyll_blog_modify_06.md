@@ -19,6 +19,7 @@ $ cd 'your-repository-path'
 $ git remote add gitee 'your-gitee-repository-address'
 
 $ git push gitee master    # Push to 'gitee'
+
 $ git push origin master   # Push to 'github'
 ```
 
