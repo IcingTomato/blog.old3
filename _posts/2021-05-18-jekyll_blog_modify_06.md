@@ -17,10 +17,8 @@ So
 ```shell
 cd 'your-repository-path'
 git remote add gitee 'your-gitee-repository-address'
-# Push to 'gitee'
-git push gitee master    
-# Push to 'github'
-git push origin master   
+git push gitee master    # Push to 'gitee'
+git push origin master   # Push to 'github' 
 ```
 
 You can also change **'your-repository'/.git/config**
