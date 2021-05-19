@@ -28,8 +28,8 @@ git push -u origin master
 # GitHub 回退回某个commit
 
 ```shell
-$ git reset --hard 某个commit id
-$ git push -f -u origin master
+git reset --hard 某个commit id
+git push -f -u origin master
 ```
 
 至于我为什么要写这个，因为上传这张博客的时候不知道为啥始终报错。
@@ -97,11 +97,11 @@ Liquid Exception: Liquid syntax error (line 417): Syntax Error in 'assign' - Val
 然而静态博客没必要MySQL, MariaDB, PHP。所以我们只安装Jekyll所有必需的依赖项。
 
 ```shell
-$ sudo apt-get install ruby-full build-essential zlib1g-dev nginx
-$ sudo apt-get install gcc g++ make
-$ curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-$ sudo apt-get update && sudo apt-get install yarn
+sudo apt-get install ruby-full build-essential zlib1g-dev nginx
+sudo apt-get install gcc g++ make
+curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt-get update && sudo apt-get install yarn
 ```
 
 然而Ubuntu 16.04太老了，ruby的版本不支持Jekyll 4。所以我们要手动安装Ruby 3.0.0。
@@ -109,13 +109,13 @@ $ sudo apt-get update && sudo apt-get install yarn
 第一步是为Ruby安装一些依赖项。一步一步运行。
 
 ```shell
-$ sudo apt install curl
-$ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-$ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-$ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt install curl
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
-$ sudo apt-get update
-$ sudo apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
+sudo apt-get update
+sudo apt-get install git-core zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn
 ```
 
 接下来，我们将使用以下三种方法之一安装Ruby。每个都有自己的好处，如今大多数人都喜欢使用rbenv，但是如果您熟悉rvm，也可以按照这些步骤进行操作。我也提供了从源代码安装的说明，但是一般而言，您需要选择rbenv或rvm。
@@ -123,58 +123,58 @@ $ sudo apt-get install git-core zlib1g-dev build-essential libssl-dev libreadlin
 - 方法一：使用rbenv安装。首先安装rbenv，然后安装ruby-build：
 
 ```shell
-$ cd
-$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
-$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
-$ exec $SHELL
+cd
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
 
-$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-$ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
-$ exec $SHELL
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
 
-$ rbenv install 3.0.0
-$ rbenv global 3.0.0
-$ ruby -v
+rbenv install 3.0.0
+rbenv global 3.0.0
+ruby -v
 ```
 
 - 方法二：RVM安装
 
 ```shell
-$ sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
-$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-$ curl -sSL https://get.rvm.io | bash -s stable
-$ source ~/.rvm/scripts/rvm
-$ rvm install 3.0.0
-$ rvm use 3.0.0 --default
-$ ruby -v
+sudo apt-get install libgdbm-dev libncurses5-dev automake libtool bison libffi-dev
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+rvm install 3.0.0
+rvm use 3.0.0 --default
+ruby -v
 ```
 
 - 方法三：Ruby源码安装
 
 ```shell
-$ cd
-$ wget http://ftp.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz
-$ tar -xzvf ruby-3.0.0.tar.gz
-$ cd ruby-3.0.0/
-$ ./configure
-$ make
-$ sudo make install
-$ ruby -v
+cd
+wget http://ftp.ruby-lang.org/pub/ruby/3.0/ruby-3.0.0.tar.gz
+tar -xzvf ruby-3.0.0.tar.gz
+cd ruby-3.0.0/
+./configure
+make
+sudo make install
+ruby -v
 ```
 
 Ruby服务器在国外，我的博客服务器在国内，所以换个Ruby源
 
 ```shell
-$ gem source -r https://rubygems.org/
-$ gem source --add https://gems.ruby-china.com/
-$ gem source -u
+gem source -r https://rubygems.org/
+gem source --add https://gems.ruby-china.com/
+gem source -u
 ```
 
 最后一步是安装Bundler
 
 ```shell
-$ gem install bundler jekyll github-pages jekyll-paginate webrick
+gem install bundler jekyll github-pages jekyll-paginate webrick
 ```
 
 安装完之后就可以将博客从 **GitHub**或**Gitee**上**git clone**下来了。
@@ -184,13 +184,13 @@ $ gem install bundler jekyll github-pages jekyll-paginate webrick
 安装**nginx**
 
 ```shell
-$ sudo apt-get install nginx
+sudo apt-get install nginx
 ```
 
 然后定位到**nginx**的配置文件：
 
 ```shell
-$ sudo vim /etc/nginx/sites-enabled/default
+sudo vim /etc/nginx/sites-enabled/default
 ```
 
 配置文件在下面：
@@ -228,7 +228,7 @@ server {
 保存好之后重启**nginx**
 
 ```shell
-$ sudo systemctl restart nginx
+sudo systemctl restart nginx
 ```
 
 # 最终使用
@@ -236,10 +236,10 @@ $ sudo systemctl restart nginx
 如果配置好nginx和Jekyll的话
 
 ```shell
-$ cd 文件夹
-$ git clone 仓库地址
-$ git pull origin master
-$ jekyll build -d /var/www/html/
+cd 文件夹
+git clone 仓库地址
+git pull origin master
+jekyll build -d /var/www/html/
 ```
 
 # 致谢

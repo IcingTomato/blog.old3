@@ -206,7 +206,7 @@ tags: hardware software
 ## 终端输入 cat /sys/kernel/debug/pinctrl/pinctrl-maps
 
 ```shell
-$ root@Elaina:/sys/class/gpio# cat /sys/kernel/debug/pinctrl/pinctrl-maps
+root@Elaina:/sys/class/gpio# cat /sys/kernel/debug/pinctrl/pinctrl-maps
 Pinctrl maps:
 device 1c28000.serial
 state default

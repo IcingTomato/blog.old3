@@ -175,16 +175,16 @@ Seeed官方介绍
 - 更新软件包：
 
 ```shell
-$ sudo apt-get update
+sudo apt-get update
 ```
 
 - 更换软件包源和pip源
 
 ```shell
-$ wget //112.124.9.243/aptsouce.sh
-$ chmod 755 aptsouce.sh
-$ sudo -H ./aptsouce.sh
-$ sudo apt-get update
+wget //112.124.9.243/aptsouce.sh
+chmod 755 aptsouce.sh
+sudo -H ./aptsouce.sh
+sudo apt-get update
 ```
 
 因为原生的中科大源会有些许问题，所以我们将apt换成清华源，pip换成阿里源
@@ -205,13 +205,13 @@ Quark上搭载的Ubuntu 16.04使用NetworkManager来管理网络。
 - 切换到root账户
 
 ```shell
-$ su root
+su root
 ```
 
 - 查看网络设备列表
 
 ```shell
-$ nmcli dev
+nmcli dev
 ```
 
 > 注意，如果列出的设备状态是 unmanaged 的，说明网络设备不受NetworkManager管理，你需要清空 /etc/network/interfaces下的网络设置,然后重启.
@@ -219,19 +219,19 @@ $ nmcli dev
 - 开启WiFi
 
 ```shell
-$ nmcli r wifi on
+nmcli r wifi on
 ```
 
 - 扫描附近的 WiFi 热点
 
 ```shell
-$ nmcli dev wifi
+nmcli dev wifi
 ```
 
 - 连接到指定的 WiFi 热点
 
 ```shell
-$ nmcli dev wifi connect "SSID" password "PASSWORD" ifname wlan0
+nmcli dev wifi connect "SSID" password "PASSWORD" ifname wlan0
 ```
 
 > 请将 SSID和 PASSWORD 替换成实际的 WiFi名称和密码。
@@ -243,7 +243,7 @@ $ nmcli dev wifi connect "SSID" password "PASSWORD" ifname wlan0
 可以通过下列命令安装所有的USB WiFi固件:
 
 ```shell
-$ apt-get install linux-firmware
+apt-get install linux-firmware
 ```
 
 ## 使用 npi-config 配置系统
@@ -251,7 +251,7 @@ $ apt-get install linux-firmware
 > npi-config是一个命令行下的系统配置工具，可以对系统进行一些初始化的配置，可配置的项目包括：用户密码、系统语言、时区、Hostname、SSH开关、自动登录选项等，在命令行执行以下命令即可进入:
 
 ```shell
-$ sudo npi-config
+sudo npi-config
 ```
 
 ![](//panzhifei.fun/img/2021/01/26/01/npi.jpg)

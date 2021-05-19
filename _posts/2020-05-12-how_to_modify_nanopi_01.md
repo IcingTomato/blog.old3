@@ -41,41 +41,41 @@ OLED容易烧屏
 ## 更换 Ubuntu-Ports 镜像源和Python pip源（一）
 
 ```shell
-$ wget //112.124.9.243/aptsouce.sh
-$ chmod 755 aptsouce.sh
-$ sudo -H ./aptsouce.sh
-$ sudo apt-get update
+wget //112.124.9.243/aptsouce.sh
+chmod 755 aptsouce.sh
+sudo -H ./aptsouce.sh
+sudo apt-get update
 ```
 
 或者
 
 ```shell
-$ git clone https://github.com/ch1y4/NanoPi.git
-$ cd NanoPi
-$ chmod 755 aptsouce.sh
-$ sudo -H ./aptsouce.sh
-$ sudo apt-get update
+git clone https://github.com/ch1y4/NanoPi.git
+cd NanoPi
+chmod 755 aptsouce.sh
+sudo -H ./aptsouce.sh
+sudo apt-get update
 ```
 
 ## 更换 Ubuntu-Ports 镜像源（二）
 
 ```shell
 #备份sources.list
-$ cp /etc/apt/sources.list /etc/apt/sourses.list.backup
+cp /etc/apt/sources.list /etc/apt/sourses.list.backup
 #换清华源
 #把 ports.ubuntu.com 替换成 mirrors.tuna.tsinghua.edu.cn/ubuntu-ports
 #按 Ctrl+\ 进行全局替换
-$ sudo nano /etc/apt/sources.list
+sudo nano /etc/apt/sources.list
 #保存并更新
-$ sudo apt-get update
-$ sudo apt-get upgrade
+sudo apt-get update
+sudo apt-get upgrade
 ```
 
 ## NTP 自动对时
 
 ```shell
-$ sudo apt-get install ntp
-$ sudo nano /etc/ntp.conf
+sudo apt-get install ntp
+sudo nano /etc/ntp.conf
 #在/etc/ntp.conf 文件最后面添加 
 server ntp.ntsc.ac.cn
 ```
@@ -84,35 +84,35 @@ server ntp.ntsc.ac.cn
 
 ```shell
 #查看当前时区
-$ date -R
+date -R
 #修改时区
-$ tzselect
+tzselect
 #复制文件到/etc目录下
-$ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 #再次查看当前时间
-$ date -R
+date -R
 ```
 
 ## 命令行挂载Samba服务器
 
 ```shell
 #下载samba相应组件
-$ sudo apt-get install cifs-utils
+sudo apt-get install cifs-utils
 #查看共享目录
-$ smbclient -L IP地址 -N
+smbclient -L IP地址 -N
 #挂载(username=服务器的名字，密码=服务器密码，IP地址＝自己服务器的IP)
-$ sudo mount -t cifs -o username=用户名,password=密码 //IP地址/目录 /本地挂载目录
+sudo mount -t cifs -o username=用户名,password=密码 //IP地址/目录 /本地挂载目录
 #解除挂载
-$ sudo umount /挂载的目录
+sudo umount /挂载的目录
 ```
 
 ## Ubuntu 安装 Neofetch/Screenfetch(个性化显示 Linux 系统信息)
 
 ```shell
-$ sudo apt-get install python-software-properties software-properties-common
-$ sudo add-apt-repository ppa:dawidd0811/neofetch
-$ sudo apt-get update
-$ sudo apt-get install neofetch screenfetch
+sudo apt-get install python-software-properties software-properties-common
+sudo add-apt-repository ppa:dawidd0811/neofetch
+sudo apt-get update
+sudo apt-get install neofetch screenfetch
 ```
 
 # 附加一点
@@ -120,13 +120,13 @@ $ sudo apt-get install neofetch screenfetch
 千万千万不要用
 
 ```shell
-$ sudo apt-get autoremove
+sudo apt-get autoremove
 ```
 
 直接干掉没用的和有用的依赖
 
 ```shell
-$ sudo apt-get dist-upgrade
+sudo apt-get dist-upgrade
 ```
 
 用这个专治

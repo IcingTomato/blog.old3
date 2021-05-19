@@ -15,12 +15,12 @@ Because I use Ali ECS Area Hangzhou, it's hard to visit GitHub, so I have to use
 So
 
 ```shell
-$ cd 'your-repository-path'
-$ git remote add gitee 'your-gitee-repository-address'
+cd 'your-repository-path'
+git remote add gitee 'your-gitee-repository-address'
 # Push to 'gitee'
-$ git push gitee master    
+git push gitee master    
 # Push to 'github'
-$ git push origin master   
+git push origin master   
 ```
 
 You can also change **'your-repository'/.git/config**

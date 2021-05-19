@@ -15,30 +15,30 @@ tags: software tutorial
 在安装Jekyll之前，我们需要确保拥有所有必需的依赖项。
 
 ```shell
-$ sudo apt-get install ruby-full build-essential zlib1g-dev
+sudo apt-get install ruby-full build-essential zlib1g-dev
 ```
 
 最好避免以root用户身份安装Ruby Gems。因此，我们需要为您的用户帐户设置一个gem安装目录。以下命令将环境变量添加到您的【~/.bashrc】文件中，以配置gem安装路径。立即运行它们：
 
 ```shell
-$ echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
-$ echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
-$ echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
-$ source ~/.bashrc
+echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
+echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
+echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 安装Jekyll：
 
 ```shell
-$ gem install jekyll bundler
+gem install jekyll bundler
 ```
 
 最后，从[ch1y4/ch1y4.github.io](https://github.com/ch1y4/ch1y4.github.io)上 git clone
 
 ```shell
-$ git clone https://github.com/ch1y4/ch1y4.github.io.git
-$ cd ch1y4.github.io
-$ jekyll serve
+git clone https://github.com/ch1y4/ch1y4.github.io.git
+cd ch1y4.github.io
+jekyll serve
 ```
 
 然后就可以在本地[http://localhost:4000](http://localhost:4000)看到了。
@@ -54,13 +54,13 @@ $ jekyll serve
 所以要降级
 
 ```shell
-$ gem uninstall jekyll
+gem uninstall jekyll
 ```
 
 然后安装Jekyll3.1.3
 
 ```shell
-$ gem install jekyll -v 3.1.3
+gem install jekyll -v 3.1.3
 ```
 
 最后，缺啥装啥
@@ -72,13 +72,13 @@ $ gem install jekyll -v 3.1.3
 换端口
 
 ```shell
-$ jekyll serve --port 4001
+jekyll serve --port 4001
 ```
 
 上公网
 
 ```shell
-$ jekyll serve -w --host=0.0.0.0
+jekyll serve -w --host=0.0.0.0
 ```
 
 换端口又上公网
@@ -92,8 +92,8 @@ $ jekyll serve -w --host=0.0.0.0
 首先，安装nginx
 
 ```shell
-$ sudo apt-get install nginx
-$ sudo nano /etc/nginx/conf.d/jekyll.conf
+sudo apt-get install nginx
+sudo nano /etc/nginx/conf.d/jekyll.conf
 ```
 
 现在，用喜欢的文本编辑器（nano）编辑/etc/nginx/conf.d/jekyll.conf并粘贴以下内容：
@@ -113,8 +113,8 @@ server {
 执行以下操作以重新启动Nginx：
 
 ```shell
-$ jekyll serve --detach
-$ sudo systemctl restart nginx
+jekyll serve --detach
+sudo systemctl restart nginx
 ```
 
 # 彩蛋

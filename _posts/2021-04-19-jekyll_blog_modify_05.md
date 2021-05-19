@@ -9,12 +9,12 @@ tags: software tutorial
 When I used the new blog template, it occured some problem.
 
 ```shell
-$ cd <the folder>
-$ git clone <repository-address>
-$ bundle add webrick rake
-$ bundle install --path vendor/cache
-$ git pull origin master
-$ bundle exec jekyll build -d /var/www/html/
+cd <the folder>
+git clone <repository-address>
+bundle add webrick rake
+bundle install --path vendor/cache
+git pull origin master
+bundle exec jekyll build -d /var/www/html/
 ```
 
 First, you need to install some Dependence like **webrick** **rake** **jekyll**.
